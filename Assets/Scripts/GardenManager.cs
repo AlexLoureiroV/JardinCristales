@@ -32,6 +32,7 @@ public class GardenManager : MonoBehaviour
 	[Header("UI")]
 	public Text plantedText;
 	public Text inventoryText;
+	public GameObject controlsPanel;
 
 	[Header("Debug")]
 	public bool showDebug = true;
@@ -60,6 +61,11 @@ public class GardenManager : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.E))
 		{
 			CollectNearestCrystal();
+		}
+
+		if (Input.GetKeyDown(KeyCode.H))
+		{
+			ToggleControlsPanel();
 		}
 	}
 
@@ -231,6 +237,16 @@ public class GardenManager : MonoBehaviour
 		}
 
 		Debug.Log($"[Jardín] Cargados {data.crystals.Count} cristales desde el archivo.");
+	}
+
+	private void ToggleControlsPanel()
+	{
+		if (controlsPanel == null)
+		{
+			return;
+		}
+
+		controlsPanel.SetActive(!controlsPanel.activeSelf);
 	}
 
 	private string BuildInventoryText()
