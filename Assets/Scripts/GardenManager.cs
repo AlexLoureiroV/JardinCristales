@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GardenManager : MonoBehaviour
 {
@@ -25,6 +26,13 @@ public class GardenManager : MonoBehaviour
 	public float[] possibleHeights;
 	public string[] rarityNames;
 
+	[Header("Jugador")]
+	public Transform player;
+
+	[Header("UI")]
+	public Text plantedText;
+	public Text inventoryText;
+
 	[Header("Debug")]
 	public bool showDebug = true;
 
@@ -37,6 +45,7 @@ public class GardenManager : MonoBehaviour
 	void Start()
 	{
 		LoadData();
+		UpdateUI();
 		PrintStatus();
 	}
 
@@ -61,6 +70,18 @@ public class GardenManager : MonoBehaviour
 	#endregion
 
 	#region Public Methods
+	public void UpdateUI()
+	{
+		if (plantedText != null)
+		{
+			plantedText.text = $"Cristales en el jardín: {plantedCrystals.Count}";
+		}
+
+		if (inventoryText != null)
+		{
+			inventoryText.text = BuildInventoryText();
+		}
+	}
 	#endregion
 
 	#region Private Methods
@@ -82,15 +103,22 @@ public class GardenManager : MonoBehaviour
 
 		Debug.Log($"[Jardín] Plantado cristal {rarityNames[rarityIndex]} en {position}.");
 		PrintStatus();
+		UpdateUI();
 	}
 
 	private void CollectNearestCrystal()
 	{
-		Crystal nearest = FindNearestCrystalInRadius();
+		if (player == null)
+		{
+			Debug.Log("[Jardín] No hay jugador asignado en el GardenManager.");
+			return;
+		}
+
+		Crystal nearest = FindNearestCrystalInRadius(player.position);
 
 		if (nearest == null)
 		{
-			Debug.Log($"[Jardín] No hay cristales a menos de {collectRadius} m del centro.");
+			Debug.Log($"[Jardín] No hay cristales a menos de {collectRadius} m del jugador.");
 			return;
 		}
 
@@ -102,16 +130,17 @@ public class GardenManager : MonoBehaviour
 
 		Debug.Log($"[Inventario] Recogido cristal: {Describe(data)}. Total: {inventory.Count}.");
 		PrintStatus();
+		UpdateUI();
 	}
 
-	private Crystal FindNearestCrystalInRadius()
+	private Crystal FindNearestCrystalInRadius(Vector3 center)
 	{
 		Crystal nearest = null;
 		float nearestDistance = float.MaxValue;
 
 		foreach (Crystal crystal in plantedCrystals)
 		{
-			float distance = Vector3.Distance(crystal.transform.position, Vector3.zero);
+			float distance = Vector3.Distance(crystal.transform.position, center);
 			if (distance <= collectRadius && distance < nearestDistance)
 			{
 				nearest = crystal;
@@ -157,6 +186,8 @@ public class GardenManager : MonoBehaviour
 	{
 		SaveData data = new SaveData();
 
+		plantedCrystals.RemoveAll(crystal => crystal == null);
+
 		foreach (Crystal crystal in plantedCrystals)
 		{
 			data.crystals.Add(crystal.ToData(false));
@@ -200,6 +231,28 @@ public class GardenManager : MonoBehaviour
 		}
 
 		Debug.Log($"[Jardín] Cargados {data.crystals.Count} cristales desde el archivo.");
+	}
+
+	private string BuildInventoryText()
+	{
+		int[] rarityCounts = new int[rarityNames.Length];
+
+		foreach (CrystalData data in inventory)
+		{
+			if (data.rarityIndex >= 0 && data.rarityIndex < rarityCounts.Length)
+			{
+				rarityCounts[data.rarityIndex]++;
+			}
+		}
+
+		string result = $"Inventario: {inventory.Count} cristales\n";
+
+		for (int i = 0; i < rarityNames.Length; i++)
+		{
+			result += $"{rarityNames[i]}: {rarityCounts[i]}\n";
+		}
+
+		return result.TrimEnd('\n');
 	}
 
 	private string Describe(CrystalData data)
