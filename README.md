@@ -4,7 +4,26 @@ Práctica de programación y Git (módulo 5.2.8, Tema 2: Gestión de Componentes
 
 Versión de Unity: 6000.3.16f1 (URP). Escena: `Assets/Scenes/Garden.unity`.
 
-El enunciado del ejercicio, con la propuesta de la IA y el desarrollo elegido, está en [ENUNCIADO.md](ENUNCIADO.md).
+### Enunciado generado: "Jardín de Cristales" 🌱
+
+Quiero que me propongas un ejercicio para Unity 3D, para un curso de videojuegos,
+como si fuera el alumno. Sencillo y original, debe ser minimalista y específico para el
+tema donde hemos tratado **arrays, listas, persistencia de datos, GetComponent e
+Instantiate**. No añadir otras mecánicas, como mucho inputs.
+
+---
+
+### Contexto del juego
+
+Eres un cuidador de un jardín mágico de cristales. En un jardín (plano de 10x10
+metros) puedes **plantar** cristales que brotan en posiciones aleatorias, cada uno con
+propiedades distintas (color, altura y rareza). También puedes **recoger** los
+cristales que están a tu alcance, guardándolos en un inventario.
+
+El jardín debe **recordar su estado**: cuando la escena se cierra, todo lo plantado se
+guarda en un archivo JSON; al volver a abrirla, el jardín se reconstruye tal y como
+estaba, incluido el inventario de cristales recogidos.
+
 
 ## Cómo se juega
 
