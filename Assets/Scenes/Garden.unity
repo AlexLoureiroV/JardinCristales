@@ -433,7 +433,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -669,7 +669,7 @@ MonoBehaviour:
   - {fileID: 240514224665816165, guid: 7610272852fe6c94bafb0bcf316eb824, type: 3}
   - {fileID: 7080578817346631062, guid: 312a41509cdea964cb40ceca3b0ab1c7, type: 3}
   maxCrystals: 15
-  gardenSize: 10
+  gardenSize: 30
   collectRadius: 2
   possibleColors:
   - {r: 1, g: 0, b: 0.9735141, a: 0}
@@ -797,7 +797,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: d7d052087b0b48a4fa6e5b15d0bdd7da, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
