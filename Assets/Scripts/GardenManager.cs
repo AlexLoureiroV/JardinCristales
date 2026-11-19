@@ -39,6 +39,8 @@ public class GardenManager : MonoBehaviour
 
 	private List<Crystal> plantedCrystals = new List<Crystal>();
 	private List<CrystalData> inventory = new List<CrystalData>();
+
+	private static Mesh octahedronMesh;
 	#endregion
 
 	#region Unity Callbacks
@@ -66,6 +68,11 @@ public class GardenManager : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.H))
 		{
 			ToggleControlsPanel();
+		}
+
+		if (Input.GetKeyDown(KeyCode.X))
+		{
+			ResetInventory();
 		}
 	}
 
@@ -139,6 +146,20 @@ public class GardenManager : MonoBehaviour
 		UpdateUI();
 	}
 
+	private void ResetInventory()
+	{
+		if (inventory.Count == 0)
+		{
+			Debug.Log("[Inventario] El inventario ya está vacío.");
+			return;
+		}
+
+		inventory.Clear();
+		Debug.Log("[Inventario] Inventario vaciado.");
+		PrintStatus();
+		UpdateUI();
+	}
+
 	private Crystal FindNearestCrystalInRadius(Vector3 center)
 	{
 		Crystal nearest = null;
@@ -179,7 +200,53 @@ public class GardenManager : MonoBehaviour
 			renderer.material.color = possibleColors[colorIndex];
 		}
 
+		crystal.basePosition = position;
+		crystal.floatSpeed = Random.Range(1f, 2f);
+		crystal.rotateSpeed = Random.Range(30f, 90f);
+
+		MeshFilter meshFilter = instance.GetComponent<MeshFilter>();
+		if (meshFilter != null)
+		{
+			meshFilter.sharedMesh = GetOctahedronMesh();
+		}
+
 		plantedCrystals.Add(crystal);
+	}
+
+	private Mesh GetOctahedronMesh()
+	{
+		if (octahedronMesh == null)
+		{
+			float radius = 0.5f;
+
+			Vector3 top = new Vector3(0f, radius, 0f);
+			Vector3 bottom = new Vector3(0f, -radius, 0f);
+			Vector3 right = new Vector3(radius, 0f, 0f);
+			Vector3 left = new Vector3(-radius, 0f, 0f);
+			Vector3 front = new Vector3(0f, 0f, radius);
+			Vector3 back = new Vector3(0f, 0f, -radius);
+
+			Vector3[] corners = { top, bottom, right, left, front, back };
+			int[] faces = { 0, 4, 2, 0, 3, 4, 0, 5, 3, 0, 2, 5, 1, 2, 4, 1, 4, 3, 1, 3, 5, 1, 5, 2 };
+
+			Vector3[] vertices = new Vector3[24];
+			int[] triangles = new int[24];
+
+			for (int i = 0; i < 24; i++)
+			{
+				vertices[i] = corners[faces[i]];
+				triangles[i] = i;
+			}
+
+			Mesh mesh = new Mesh();
+			mesh.vertices = vertices;
+			mesh.triangles = triangles;
+			mesh.RecalculateNormals();
+			mesh.RecalculateBounds();
+			octahedronMesh = mesh;
+		}
+
+		return octahedronMesh;
 	}
 
 	private Vector3 RandomGardenPosition(float height)

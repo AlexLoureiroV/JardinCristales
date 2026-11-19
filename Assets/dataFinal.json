@@ -3,264 +3,48 @@
         {
             "prefabIndex": 1,
             "position": {
-                "x": -1.3823789358139039,
-                "y": 0.5,
-                "z": 0.9110846519470215
-            },
-            "colorIndex": 2,
-            "height": 1.0,
-            "rarityIndex": 1,
-            "inInventory": true
-        },
-        {
-            "prefabIndex": 0,
-            "position": {
-                "x": -3.476581573486328,
+                "x": 8.012494087219239,
                 "y": 0.25,
-                "z": -3.435429096221924
-            },
-            "colorIndex": 0,
-            "height": 0.5,
-            "rarityIndex": 2,
-            "inInventory": true
-        },
-        {
-            "prefabIndex": 1,
-            "position": {
-                "x": -4.380054473876953,
-                "y": 0.5,
-                "z": -4.14546012878418
-            },
-            "colorIndex": 1,
-            "height": 1.0,
-            "rarityIndex": 3,
-            "inInventory": true
-        },
-        {
-            "prefabIndex": 0,
-            "position": {
-                "x": 2.3854215145111086,
-                "y": 1.25,
-                "z": 1.1438568830490113
+                "z": -4.5255126953125
             },
             "colorIndex": 3,
-            "height": 2.5,
+            "height": 0.5,
             "rarityIndex": 0,
             "inInventory": true
         },
         {
             "prefabIndex": 0,
             "position": {
-                "x": 3.6325950622558595,
+                "x": 6.357518672943115,
                 "y": 0.75,
-                "z": 2.46734356880188
-            },
-            "colorIndex": 2,
-            "height": 1.5,
-            "rarityIndex": 3,
-            "inInventory": true
-        },
-        {
-            "prefabIndex": 0,
-            "position": {
-                "x": -0.5123893022537231,
-                "y": 0.75,
-                "z": -0.7553353309631348
-            },
-            "colorIndex": 2,
-            "height": 1.5,
-            "rarityIndex": 2,
-            "inInventory": true
-        },
-        {
-            "prefabIndex": 0,
-            "position": {
-                "x": -2.3487138748168947,
-                "y": 0.5,
-                "z": 1.934539794921875
-            },
-            "colorIndex": 0,
-            "height": 1.0,
-            "rarityIndex": 3,
-            "inInventory": true
-        },
-        {
-            "prefabIndex": 0,
-            "position": {
-                "x": 4.226356506347656,
-                "y": 0.25,
-                "z": -1.2971307039260865
+                "z": 4.731372356414795
             },
             "colorIndex": 1,
-            "height": 0.5,
-            "rarityIndex": 2,
-            "inInventory": true
-        },
-        {
-            "prefabIndex": 2,
-            "position": {
-                "x": 1.7928751707077027,
-                "y": 0.75,
-                "z": 4.334105491638184
-            },
-            "colorIndex": 2,
-            "height": 1.5,
-            "rarityIndex": 1,
-            "inInventory": true
-        },
-        {
-            "prefabIndex": 0,
-            "position": {
-                "x": 0.30762195587158205,
-                "y": 1.25,
-                "z": 3.800405740737915
-            },
-            "colorIndex": 3,
-            "height": 2.5,
-            "rarityIndex": 3,
-            "inInventory": true
-        },
-        {
-            "prefabIndex": 1,
-            "position": {
-                "x": 0.3901515007019043,
-                "y": 0.75,
-                "z": 4.073131561279297
-            },
-            "colorIndex": 3,
             "height": 1.5,
             "rarityIndex": 0,
             "inInventory": true
         },
         {
-            "prefabIndex": 0,
-            "position": {
-                "x": -3.2769289016723635,
-                "y": 0.25,
-                "z": -2.143033981323242
-            },
-            "colorIndex": 1,
-            "height": 0.5,
-            "rarityIndex": 2,
-            "inInventory": true
-        },
-        {
-            "prefabIndex": 0,
-            "position": {
-                "x": -1.5384308099746705,
-                "y": 0.5,
-                "z": -2.6462254524230959
-            },
-            "colorIndex": 3,
-            "height": 1.0,
-            "rarityIndex": 2,
-            "inInventory": true
-        },
-        {
-            "prefabIndex": 1,
-            "position": {
-                "x": 1.4822776317596436,
-                "y": 0.25,
-                "z": -3.832350730895996
-            },
-            "colorIndex": 0,
-            "height": 0.5,
-            "rarityIndex": 2,
-            "inInventory": true
-        },
-        {
             "prefabIndex": 2,
             "position": {
-                "x": 4.185142517089844,
+                "x": 4.728814601898193,
                 "y": 1.25,
-                "z": -3.779197931289673
+                "z": 8.88731575012207
             },
             "colorIndex": 2,
-            "height": 2.5,
-            "rarityIndex": 0,
-            "inInventory": true
-        },
-        {
-            "prefabIndex": 1,
-            "position": {
-                "x": -7.486518859863281,
-                "y": 1.25,
-                "z": -11.946044921875
-            },
-            "colorIndex": 0,
-            "height": 2.5,
-            "rarityIndex": 2,
-            "inInventory": true
-        },
-        {
-            "prefabIndex": 2,
-            "position": {
-                "x": -3.5529375076293947,
-                "y": 0.25,
-                "z": -0.5876221656799316
-            },
-            "colorIndex": 0,
-            "height": 0.5,
-            "rarityIndex": 1,
-            "inInventory": true
-        },
-        {
-            "prefabIndex": 2,
-            "position": {
-                "x": -1.4322175979614258,
-                "y": 0.25,
-                "z": 2.2936978340148927
-            },
-            "colorIndex": 3,
-            "height": 0.5,
-            "rarityIndex": 2,
-            "inInventory": true
-        },
-        {
-            "prefabIndex": 0,
-            "position": {
-                "x": -3.48891019821167,
-                "y": 1.25,
-                "z": 1.7189878225326539
-            },
-            "colorIndex": 3,
             "height": 2.5,
             "rarityIndex": 3,
             "inInventory": true
         },
         {
-            "prefabIndex": 1,
+            "prefabIndex": 2,
             "position": {
-                "x": -2.3839035034179689,
-                "y": 0.5,
-                "z": 4.8392229080200199
-            },
-            "colorIndex": 1,
-            "height": 1.0,
-            "rarityIndex": 1,
-            "inInventory": true
-        },
-        {
-            "prefabIndex": 0,
-            "position": {
-                "x": -6.255876541137695,
+                "x": 4.390159606933594,
                 "y": 0.75,
-                "z": 1.9027347564697266
-            },
-            "colorIndex": 2,
-            "height": 1.5,
-            "rarityIndex": 3,
-            "inInventory": true
-        },
-        {
-            "prefabIndex": 0,
-            "position": {
-                "x": -9.60470962524414,
-                "y": 1.25,
-                "z": -1.243800163269043
+                "z": 13.719154357910157
             },
             "colorIndex": 3,
-            "height": 2.5,
+            "height": 1.5,
             "rarityIndex": 2,
             "inInventory": true
         }
